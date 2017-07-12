@@ -5,7 +5,7 @@ Line segments intersection for Unity3D/C#.
 ![screenshot](Documents/screencast.gif)
 
 ## Environment
-Unity 5.6.2f1
+Unity 2017.1.0f3
 
 ## License
 MIT
