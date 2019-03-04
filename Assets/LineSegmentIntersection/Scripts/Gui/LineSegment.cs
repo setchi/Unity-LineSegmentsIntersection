@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using System;
 
 namespace LineSegmentsIntersection
@@ -10,17 +6,14 @@ namespace LineSegmentsIntersection
     [RequireComponent(typeof(LineRenderer))]
     public class LineSegment : MonoBehaviour
     {
-        [SerializeField]
-        Handle handleA;
-        [SerializeField]
-        Handle handleB;
+        [SerializeField] Handle handleA;
+        [SerializeField] Handle handleB;
 
         LineRenderer lineRenderer;
         Action onDrag;
 
-        public Vector2 PointA { get { return handleA.Position; } }
-
-        public Vector2 PointB { get { return handleB.Position; } }
+        public Vector2 PointA => handleA.Position;
+        public Vector2 PointB => handleB.Position;
 
         void Start()
         {
@@ -29,24 +22,18 @@ namespace LineSegmentsIntersection
             UpdateLine();
 
             handleA.OnDrag(position =>
-                {
-                    handleA.SetPosition(position);
-                    UpdateLine();
-                    if (onDrag != null)
-                    {
-                        onDrag();
-                    }
-                });
+            {
+                handleA.SetPosition(position);
+                UpdateLine();
+                onDrag?.Invoke();
+            });
 
             handleB.OnDrag(position =>
-                {
-                    handleB.SetPosition(position);
-                    UpdateLine();
-                    if (onDrag != null)
-                    {
-                        onDrag();
-                    }
-                });
+            {
+                handleB.SetPosition(position);
+                UpdateLine();
+                onDrag?.Invoke();
+            });
         }
 
         void UpdateLine()

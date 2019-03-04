@@ -12,7 +12,7 @@ namespace LineSegmentsIntersection
         RectTransform rectTransform;
         Action<Vector2> onDrag;
 
-        public Vector2 Position { get { return rectTransform.anchoredPosition; } }
+        public Vector2 Position => rectTransform.anchoredPosition;
 
         void Awake()
         {
@@ -38,11 +38,8 @@ namespace LineSegmentsIntersection
         void IDragHandler.OnDrag(PointerEventData e)
         {
             e.Use();
-            if (onDrag == null)
-            {
-                return;
-            }
-            onDrag(e.position);
+
+            onDrag?.Invoke(e.position);
         }
     }
 }
