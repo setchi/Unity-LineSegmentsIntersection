@@ -24,7 +24,7 @@ namespace LineSegmentsIntersection
             var p4 = lineSegmentB.PointB;
 
             Vector2 intersection;
-            if (Math2D.LineSegmentsIntersection(p1, p2, p3, p4, out intersection))
+            if (Math2d.LineSegmentsIntersection(p1, p2, p3, p4, out intersection))
             {
                 imageIntersection.color = Color.red;
                 imageIntersection.rectTransform.anchoredPosition = intersection;
