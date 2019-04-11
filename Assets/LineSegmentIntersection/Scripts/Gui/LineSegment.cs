@@ -6,8 +6,8 @@ namespace LineSegmentsIntersection
     [RequireComponent(typeof(LineRenderer))]
     public class LineSegment : MonoBehaviour
     {
-        [SerializeField] Handle handleA;
-        [SerializeField] Handle handleB;
+        [SerializeField] Handle handleA = default;
+        [SerializeField] Handle handleB = default;
 
         LineRenderer lineRenderer;
         Action onDrag;

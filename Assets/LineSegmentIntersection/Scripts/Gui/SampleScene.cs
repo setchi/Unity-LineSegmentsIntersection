@@ -5,9 +5,9 @@ namespace LineSegmentsIntersection
 {
     public class SampleScene : MonoBehaviour
     {
-        [SerializeField] LineSegment lineSegmentA;
-        [SerializeField] LineSegment lineSegmentB;
-        [SerializeField] Image imageIntersection;
+        [SerializeField] LineSegment lineSegmentA = default;
+        [SerializeField] LineSegment lineSegmentB = default;
+        [SerializeField] Image imageIntersection = default;
 
         void Start()
         {
