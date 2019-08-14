@@ -6,7 +6,7 @@ namespace LineSegmentsIntersection
 {
     public static class Math2d
     {
-        public static bool LineSegmentsIntersection(Vector2 p1, Vector2 p2, Vector2 p3, Vector3 p4, out Vector2 intersection)
+        public static bool LineSegmentsIntersection(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, out Vector2 intersection)
         {
             intersection = Vector2.zero;
 
